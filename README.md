@@ -11,14 +11,16 @@ This was my favorite framework to use. It was easy to use and had a lot of compo
 
 https://mui.com/material-ui/getting-started/
 
-```npm install @mui/material @emotion/react @emotion/styled```
+```
+npm install @mui/material @emotion/react @emotion/styled
+```
 
-Pros:
+**Pros:**
 - Well-documented API
 - Consistency
 - Customization
 
-Cons:
+**Cons:**
 - Large bundle size
 - Lack of flexibility
 - Learning curve
@@ -28,14 +30,16 @@ I really like the components available in this framework and they have some unqi
 
 https://ant.design/docs/react/getting-started
 
-```npm install antd --save```
+```
+npm install antd --save
+```
 
-Pros:
+**Pros:**
 - Well-documented API
 - Active development
 - Good performance
 
-Cons:
+**Cons:**
 - Over-engineering
 - Design limitations
 
@@ -44,14 +48,16 @@ This was my least favorite framework to use. I didn't like the components availa
 
 https://react-bootstrap.github.io/docs/getting-started/introduction
 
-```npm install react-bootstrap bootstrap```
+```
+npm install react-bootstrap bootstrap
+```
 
-Pros:
+**Pros:**
 - Extensive component library
 - Highly responsive
 - Easy integration
 
-Cons:
+**Cons:**
 - Additional dependencies
 - Incompatibility with older browsers
 - Potential conflicts with other libraries
