@@ -1,8 +1,17 @@
 import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
-import { DatePicker, message, Alert, Button, FloatButton } from "antd";
+import {
+  DatePicker,
+  message,
+  Alert,
+  Button,
+  FloatButton,
+  Space,
+} from "antd";
 import { SearchOutlined, QuestionCircleOutlined } from "@ant-design/icons";
 import "./index.css";
+
+const { RangePicker } = DatePicker;
 
 const App = () => {
   const [date, setDate] = useState(null);
@@ -16,40 +25,43 @@ const App = () => {
   return (
     <>
       <div style={{ width: 400, margin: "100px auto" }}>
-        <DatePicker onChange={handleChange} />
-        <div style={{ margin: "30px 0px" }}>
-          Selected Date: {date ? date.format("YYYY-MM-DD") : "None"}
-        </div>
-        <Alert
-          message="Selected Date"
-          description={date ? date.format("YYYY-MM-DD") : "None"}
-        />
-        <Button type="primary">Primary Button</Button>
-        <Button type="primary" icon={<SearchOutlined />}>
-          Search
-        </Button>
-        <FloatButton
-          shape="circle"
-          badge={{ dot: true }}
-          style={{ right: 24 + 70 + 70 }}
-        />
-        <FloatButton.Group shape="circle" style={{ right: 24 + 70 }}>
-          <FloatButton
-            href="https://ant.design/index-cn"
-            tooltip={<div>custom badge color</div>}
-            badge={{ count: 5, color: "blue" }}
+        <Space direction="vertical" size={12}>
+          <DatePicker onChange={handleChange} />
+          <div style={{ margin: "30px 0px" }}>
+            Selected Date: {date ? date.format("YYYY-MM-DD") : "None"}
+          </div>
+          <Alert
+            message="Selected Date"
+            description={date ? date.format("YYYY-MM-DD") : "None"}
           />
-          <FloatButton badge={{ count: 5 }} />
-        </FloatButton.Group>
-        <FloatButton.Group shape="circle">
+          <Button type="primary">Primary Button</Button>
+          <Button type="primary" icon={<SearchOutlined />}>
+            Search
+          </Button>
           <FloatButton
-            badge={{ count: 12 }}
-            icon={<QuestionCircleOutlined />}
+            shape="circle"
+            badge={{ dot: true }}
+            style={{ right: 24 + 70 + 70 }}
           />
-          <FloatButton badge={{ count: 123, overflowCount: 999 }} />
-          <FloatButton.BackTop visibilityHeight={0} />
-        </FloatButton.Group>
-        {contextHolder}
+          <FloatButton.Group shape="circle" style={{ right: 24 + 70 }}>
+            <FloatButton
+              href="https://ant.design/index-cn"
+              tooltip={<div>custom badge color</div>}
+              badge={{ count: 5, color: "blue" }}
+            />
+            <FloatButton badge={{ count: 5 }} />
+          </FloatButton.Group>
+          <FloatButton.Group shape="circle">
+            <FloatButton
+              badge={{ count: 12 }}
+              icon={<QuestionCircleOutlined />}
+            />
+            <FloatButton badge={{ count: 123, overflowCount: 999 }} />
+            <FloatButton.BackTop visibilityHeight={0} />
+          </FloatButton.Group>
+          <RangePicker picker="year" />
+          {contextHolder}
+        </Space>
       </div>
     </>
   );
